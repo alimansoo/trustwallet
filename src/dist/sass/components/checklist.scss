@@ -1,0 +1,122 @@
+.content-box{
+    overflow: hidden;
+    background-color: $background;
+    border-radius: $border-radius;
+    
+    max-width: $width;
+    width: $width;
+    .header{
+        border-bottom: 1px solid gray;
+    }
+    .body{
+        padding: $padding;
+    }
+}
+.badge{
+    background-color: aqua;
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin: 0px 6px;
+}
+.headertab{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    flex-direction: row;
+    grid-gap: 20px;
+    .tab{
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        &.active{
+            background-color: rgba(107, 0, 128,.4);
+        }
+    }
+}
+.fa-2x{
+    font-size: 3rem;
+}
+#checklist{
+    .item{
+        cursor: pointer;
+        padding: 10px 12px;
+        user-select: none;
+        label{
+            position: relative;
+            font-weight: bold;
+            &::before,&::after{
+                content: "";
+                position: absolute;
+            }
+            &::before{
+                left: -27px;
+                top: 50%;
+                border-radius: 4px;
+                height: 3px;
+                width: 12px;
+                background-color: $check;
+            }
+            &::after{
+                // left: -5px;
+                // top: 50%;
+                // border-radius: 4px;
+                // height: 3px;
+                // width: 120%;
+                // background-color: $disable;
+            }
+        }
+        input[type="checkbox"]{
+            visibility: hidden;
+            margin-right: 20px;
+            &:checked{
+              position: relative;
+              &::before,&::after{
+                visibility: visible;
+                content: "";
+                position: absolute;
+                background-color: $check;
+                height: 3px;
+              }
+              &::after{
+                // left: -27px;
+                // top: 50%;
+                border-radius: 4px;
+                transform: rotate(-40deg);
+
+                left: 40%;
+                transform-origin: right bottom;
+                animation: check-02 .4s ease forwards;
+              }
+              &::before{
+                  transform: rotate(-139deg);
+                  // left: -27px;
+                  // top: 50%;
+                  border-radius: 4px;
+                  right: 60%;
+                  transform-origin: right bottom;
+                  animation: check-01 .4s ease forwards;
+              }
+              &+label{
+                  color: $disable;
+                  // left: -100%;
+                  transition: all ease-in 0.1s;
+      
+                  animation: ch-label .25s ease forwards .2s;
+                  &::after{
+                      top: 50%;
+                      border-radius: 4px;
+                      height: 2px;
+                      background-color: $disable;
+                      transition: all ease-in 0.1s;
+                      animation: ch-decoration .2s ease forwards .1s;
+                  }
+                  &::before{
+                    width: 3px;
+                    animation: firework .5s ease-in forwards .1s;
+                  }
+              }
+          }
+        }
+    }
+}

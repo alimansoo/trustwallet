@@ -1,0 +1,27 @@
+.m{
+  $prop: 'margin';
+  &x{
+    &-1{#{$prop}: 0.5rem 0;}
+    &-2{#{$prop}: 0.75rem 0;}
+  }
+  &y{
+    &-1{#{$prop}: 0 0.5rem;}
+    &-2{#{$prop}: 0 0.75rem;}
+  }
+}
+.p{
+  $prop: 'padding';
+  &-1{#{$prop}: 0.75rem;}
+  &x{
+    &-1{#{$prop}: 0.5rem 0;}
+    &-2{#{$prop}: 0.75rem 0;}
+  }
+  &y{
+    &-1{#{$prop}: 0 0.5rem;}
+    &-2{#{$prop}: 0 0.75rem;}
+  }
+}
+.bg{
+  $prop: 'background-color';
+  &-white{#{$prop}: white;}
+}

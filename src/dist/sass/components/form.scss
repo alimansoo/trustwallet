@@ -1,0 +1,33 @@
+form{
+    box-sizing: border-box;
+    input{
+      box-sizing: border-box;
+      width: 73%;
+      padding: 5px 10px;
+      outline: none;
+      border-radius: 5px;
+      border: 1px solid gray;
+      font-size: 16px;
+      padding: 9px 16px;
+      &:focus{
+        border: 1px solid rgba(107, 0, 128,0.9);
+        outline: 3px solid rgba(107, 0, 128,0.3); 
+      }
+    }
+    button{
+      margin-left: 10px;
+      width: 24%;
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(107, 0, 128,1);
+      font-size: 16px;
+      background-color: rgba(107, 0, 128,1);
+      color: white;
+      font-weight: bold;
+      padding: 9px 16px;
+      &:focus{
+        border: 1px solid rgba(107, 0, 128,0.9);
+        outline: 3px solid rgba(107, 0, 128,0.3);
+      }
+    }
+  }
