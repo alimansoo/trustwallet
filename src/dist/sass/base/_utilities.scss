@@ -1,5 +1,20 @@
+@mixin utiliti($prop) {
+  &-0{#{$prop}: 0px !important;}
+  &-2{#{$prop}: 2px;}
+  &-4{#{$prop}: 4px !important;}
+  &-8{#{$prop}: 8px !important;}
+  &-14{#{$prop}: 14px !important;}
+  &-16{#{$prop}: 16px !important;}
+  &-20{#{$prop}: 20px !important;}
+  &-24{#{$prop}: 24px !important;}
+  &-32{#{$prop}: 32px !important;}
+}
 .m{
   $prop: 'margin';
+  &t{@include utiliti('margin-top');}
+  &r{@include utiliti('margin-right');}
+  &l{@include utiliti('margin-left');}
+  &b{@include utiliti('margin-bottom');}
   &x{
     &-1{#{$prop}: 0.5rem 0;}
     &-2{#{$prop}: 0.75rem 0;}
@@ -11,7 +26,11 @@
 }
 .p{
   $prop: 'padding';
-  &-1{#{$prop}: 0.75rem;}
+  @include utiliti('padding');
+  &t{@include utiliti('padding-top');}
+  &r{@include utiliti('padding-right');}
+  &l{@include utiliti('padding-left');}
+  &b{@include utiliti('padding-bottom');}
   &x{
     &-1{#{$prop}: 0.5rem 0;}
     &-2{#{$prop}: 0.75rem 0;}
@@ -21,7 +40,52 @@
     &-2{#{$prop}: 0 0.75rem;}
   }
 }
+.f{
+  @include utiliti('font-size');
+  &-bold{
+    font-weight: bold;
+  }
+  &-600{
+    font-weight: 600;
+  }
+}
+.w100{
+  width: 100%;
+}
+.d-flex{
+  display: flex;
+} 
+.flex-column{
+  flex-direction: column !important;
+}
+.text{
+  &-right{
+    text-align: right;
+  }
+}
+.color{
+  &-secondary{
+    color : $secondary-color !important;
+  }
+  &-success{
+    color : $success-color !important;
+  }
+  &-danger{
+    color : $danger-color !important;
+  }
+  &-black{
+    color : black !important;
+  }
+}
+.justify{
+  &-end{
+    justify-content: flex-end;
+  }
+}
 .bg{
   $prop: 'background-color';
   &-white{#{$prop}: white;}
+}
+.border-coner{
+  border-radius: 12px;
 }

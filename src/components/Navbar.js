@@ -1,39 +1,57 @@
 import React,{ useState } from "react";
 // import '../dist/css/main.css';
-import { VscHome } from "react-icons/vsc";
+import { HiHome,HiOutlineHome } from "react-icons/hi";
 import { CgArrowsExchangeAlt } from "react-icons/cg";
-import { RiStore2Line,RiLineChartLine } from "react-icons/ri";
-import { BiWalletAlt } from "react-icons/bi";
+import { RiStore2Fill,RiStore2Line,RiLineChartLine } from "react-icons/ri";
+import { IoWalletOutline,IoWalletSharp } from "react-icons/io5";
+import { NavLink,useLocation } from "react-router-dom";
 
 function Navbar(props) {
-  const [navitem,Setnavitem] = useState(0);
+  const NavUrls = ['/','/markets','/exchange','/charts','/wallet'];
+  const location = useLocation();
+  const [navitem,Setnavitem] = useState(
+    NavUrls.indexOf(location.pathname)
+  );
   const activestyle = {
+    display: navitem===-1?"none":"block",
     left : navitem * 65 + 2
   }
   return (
     <nav className='mobile-navbar'>
       <div className="container">
         <div className="nav-active" style={activestyle}></div>
-        <div className={`nav-itme ${navitem === 0 ? 'active':''}`} onClick={() => Setnavitem(0)}>
-          <VscHome className="nav-itme-icon" />
+        <NavLink to='/' className={`nav-itme`} onClick={() => Setnavitem(0)}>
+          {
+            navitem === 0 ? 
+            <HiHome className="nav-itme-icon" />
+            :<HiOutlineHome className="nav-itme-icon" />
+          }
           Home
-        </div>
-        <div className={`nav-itme ${navitem === 1 ? 'active':''}`}  onClick={() => Setnavitem(1)}>
-          <RiStore2Line className="nav-itme-icon" />
-          Home
-        </div>
-        <div className={`nav-itme ${navitem === 2 ? 'active':''}`} onClick={() => Setnavitem(2)}>
+        </NavLink>
+        <NavLink to='/markets' className={`nav-itme`}  onClick={() => Setnavitem(1)}>
+          {
+            navitem === 1 ? 
+            <RiStore2Fill className="nav-itme-icon" />
+            :<RiStore2Line className="nav-itme-icon" />
+          }
+          Market
+        </NavLink>
+        <NavLink to='/exchange' className={`nav-itme`} onClick={() => Setnavitem(2)}>
           <CgArrowsExchangeAlt className="nav-itme-icon" />
           Exchang
-        </div>
-        <div className={`nav-itme ${navitem === 3 ? 'active':''}`} onClick={() => Setnavitem(3)}>
+        </NavLink>
+        <NavLink to='/charts' className={`nav-itme`} onClick={() => Setnavitem(3)}>
           <RiLineChartLine className="nav-itme-icon" />
           Chart
-        </div>
-        <div className={`nav-itme ${navitem === 4 ? 'active':''}`} onClick={() => Setnavitem(4)}>
-          <BiWalletAlt className="nav-itme-icon" />
+        </NavLink>
+        <NavLink to='/wallet' className={`nav-itme`} onClick={() => Setnavitem(4)}>
+          {
+            navitem === 4 ? 
+            <IoWalletSharp className="nav-itme-icon" />
+            :<IoWalletOutline className="nav-itme-icon" />
+          }
           Wallet
-        </div>
+        </NavLink>
       </div>
     </nav>
   );

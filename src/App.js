@@ -1,49 +1,29 @@
 import React from 'react';
 import './dist/css/main.css';
 import Navbar from './components/Navbar';
-import Button from './components/Button';
-import { BiUser,BiBell } from "react-icons/bi";
-import { ReactComponent as Logo } from './logo.svg';
-import { Action } from './components/Action';
-
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/pages/home";
+import Markets from "./components/pages/markets";
+import { Exchange } from "./components/pages/exchange";
+import { Charts } from "./components/pages/charts";
+import { Test } from "./components/pages/test";
+import Wallet from "./components/pages/wallet";
+import { Provider } from 'react-redux'
+import { store } from './Store/store'
 function App() {
   return (
-    <>
-      <main className='container'>
-        <div className="row space-between">
-          <div>
-            <Logo/>
-          </div>
-
-          <div>
-            <button className='icon-btn'>
-              <BiBell className='icon' />
-            </button>
-            <button className='icon-btn ml-10p'>
-              <BiUser className='icon' />
-            </button>
-          </div>
-          
-          
-        </div>
-        <div className="row action-row">
-          <Action/>
-          <Action/>
-          <Action/>
-          <Action/>
-          <Action/>
-          <Action/>
-          <Action/>
-          <Action/>
-        </div>
-        <div className="row white">
-            ffff
-        </div>
-        <Button />
-      </main>
+    <Provider store={store}>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/markets' element={<Markets />} />
+        <Route path='/exchange' element={<Exchange />} />
+        <Route path='/charts' element={<Charts />} />
+        <Route path='/wallet' element={<Wallet />} />
+        <Route path='/test' element={<Test />} />
+      </Routes>
       <Navbar />
-    </>
+    </Provider>
+
   );
 }
 

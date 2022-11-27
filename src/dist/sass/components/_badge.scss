@@ -1,0 +1,23 @@
+.badge{
+    border-radius: 24px;
+    margin: 0;
+    &.sm{
+        font-size: 9px;
+        padding: 4px 8px;
+        height: 24px;
+    }
+    &.md{
+        font-size: 14px;
+        padding: 6px 12px;
+        height: 32px;
+    }
+    &.dark{
+        background: linear-gradient(0deg, rgba(162, 201, 255, 0.14), rgba(162, 201, 255, 0.14)), #1A1C1E;
+        color: #fff;
+    }
+
+    &.success{
+        background: #CAFFBB;
+        color: #006E0C;
+    }
+}

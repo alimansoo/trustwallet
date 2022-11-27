@@ -1,0 +1,9 @@
+.align-items{
+    $prop : 'align-items';
+    &-center{#{$prop}: center;}
+}
+.justify{
+    $prop : 'justify-content';
+    &-between{#{$prop}: space-between;}
+    &-center{#{$prop}: center;}
+}

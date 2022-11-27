@@ -1,13 +1,28 @@
 import React from "react";
-import { BiCoin } from "react-icons/bi";
 
-export function Action(props){
-    return (
-        <div className="sm-Action">
-            <div className="icon">
-                <BiCoin  />
-            </div>
-            Coins
-        </div>
-    );
+export function Action({title,children,...props}){
+  return (
+    <div className="sm-Action">
+      {
+        props.loading ? 
+        <>
+          <span className="icon">
+            <div className="conent-loading"></div>
+          </span>
+          <span className="title">
+            <div className="conent-loading"></div>
+          </span>
+        </>
+        : 
+        <>
+          <span className="icon">
+            {children}
+          </span>
+          <span className="title">
+            {title}
+          </span>
+        </>
+      }
+    </div>
+  );
 }

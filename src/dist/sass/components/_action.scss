@@ -1,0 +1,25 @@
+.sm-Action{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 80px;
+    text-align: center;
+    font-size: 12px;
+    .icon{
+      min-width: 60px;
+      min-height: 60px;
+      width: 100%;
+      height: fit-content;
+      background-color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      border-radius: 12px;
+      font-size: 32px;
+      color: black;
+    }
+    .title{
+      min-height: 20px;
+    }
+  }

@@ -1,0 +1,22 @@
+.filter-item{
+    font-size: 14px;
+    color: black;
+    border-radius: 24px;
+    background: #F1F0F4;
+    padding: 8px 12px;
+    height: 37px;
+    margin-right: 4px;
+    &:last-child{
+        margin-right: 0;
+    }
+    &.active{
+        background: #1360A5;
+        color: #FFFFFF;
+    }
+    svg{
+        font-size: 14px;
+    }
+}
+.filter-section{
+    display: flex;
+}

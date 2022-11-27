@@ -1,0 +1,48 @@
+.icon-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  
+  background-color: transparent;
+  &.standard{
+    background: transparent;
+    border: 0px;
+    color: $primary-color;
+    &:hover,
+    &:focus{
+      background: #49454F14;
+    }
+    &:active{
+      background: rgba(73, 69, 79, 0.12);
+    }
+  }
+  &.outline{
+    background: transparent;
+    border: 1px solid #777680;
+    color: black;
+    &:hover,
+    &:focus{
+      background: hsla(264, 7%, 29%, 0.12);
+    }
+    &:active{
+      background: hsla(264, 7%, 29%, 0.16);
+    }
+  }
+  &.filled{
+    background: $primary-color;
+    border: 0;
+    color: white;
+    &:hover
+    {
+      background: hsla(208, 79%, 36%, 0.85);
+    }
+    &:focus,
+    &:active{
+      background: hsla(208, 79%, 36%, 0.80);
+    }
+    
+  }
+  svg{
+    font-size: 24px;
+  }
+}

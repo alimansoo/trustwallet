@@ -1,0 +1,39 @@
+.tabs{
+    &-titles{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        border-bottom: 0.7px solid $outline;
+        &-title{
+            text-align: center;
+            width: 135px;
+            font-size: 16px;
+            color: black;
+            padding: 10px 12px;
+            &.active{
+                color: $primary-color;
+                font-weight: bold;
+                transition: all 0.2s 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+        .active-line{
+            background-color: $primary-color;
+            position: absolute;
+            bottom: 0;
+            height: 5px;
+            width: 135px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+    .tabs-bodys{
+        padding: 12px;
+        &-body{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+    }
+}
