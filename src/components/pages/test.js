@@ -1,7 +1,7 @@
 import React from "react";  
 import Customeselect from "../customeselect";
 
-export function Test(props){
+const Test = (props)=>{
   return (
     <>
     <Customeselect />
@@ -19,3 +19,4 @@ export function Test(props){
     </>
   );
 }
+export default Test;

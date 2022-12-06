@@ -738,8 +738,10 @@ body {
     margin: 0;
     margin-bottom: 0 !important; }
     .assets.row .price-row {
-      width: 72px;
-      height: 35px; }
+      width: 150px;
+      height: 38px;
+      flex-direction: column;
+      align-items: end; }
     .assets.row-content {
       width: 30%; }
     .assets.row .row {
@@ -774,7 +776,7 @@ body {
     display: inline-flex;
     flex-direction: column;
     width: 70%;
-    height: 35px; }
+    height: 38px; }
     .assets-content .conent-loading {
       animation-delay: 2.1s; }
   .assets .symbol {
@@ -784,7 +786,8 @@ body {
     color: #545F70; }
   .assets .name {
     height: 25px;
-    font-size: 16px; }
+    font-size: 16px;
+    overflow: hidden; }
   .assets .price {
     max-width: 50%;
     overflow: hidden;
@@ -995,6 +998,28 @@ body {
       z-index: -1;
       border-radius: 20px;
       transition: all 0.4s cubic-bezier(0.43, -0.1, 0.71, 1.37); }
+
+.c-scroll::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 12px; }
+
+.c-scroll.hori::-webkit-scrollbar {
+  width: 2px; }
+
+.c-scroll.vert::-webkit-scrollbar {
+  height: 5px; }
+
+.c-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  height: 5px; }
+
+.c-scroll::-webkit-scrollbar-thumb {
+  background: #9b9b9b;
+  height: 5px !important;
+  border-radius: 12px; }
+
+.c-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555; }
 
 .exchange-symbol {
   width: 107px;

@@ -3,18 +3,6 @@ import { BiCaretUp,BiCaretDown } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { getAssets } from '../Store/slice/assetsslice';
 
-class Asset extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-      <>
-        
-      </>
-    );
-  }
-}
 export default function Assets(
     {
     confirm='',
@@ -24,6 +12,7 @@ export default function Assets(
     volume_1hrs_usd,
     volume_1mth_usd,
     price_usd,
+    icon_url,
     ...props
     }
   )
@@ -69,15 +58,15 @@ export default function Assets(
         : 
         <div className={`assets ${confirm}`}>
             <div className="row">
-                <img title={props.id_icon} src={icon?icon:"https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"} alt="dd" className="assets-img" />
+                <img title={props.id_icon} src={icon_url[0]?icon_url[0].url:"https://s2.coinmarketcap.com/static/img/coins/64x64/1.png"} alt="dd" className="assets-img" />
                 <div className="assets-content">
-                    <span className="name">{name}</span>
+                    <span className="name mb-4">{name}</span>
                     <span className="symbol">{asset_id}</span>
                 </div>
                 
             </div>
             <div className="row price-row">
-                <span className="price">{Price(price_usd)}</span>
+                <span className="price mb-4">${Price(price_usd)}</span>
                 <span className={`status ${AssetPositive?'color-success':'color-danger'}`}>
                     {
                         AssetPositive ? 

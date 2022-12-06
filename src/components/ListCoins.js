@@ -28,7 +28,6 @@ export default function TopCoins(props){
     .catch(err=>console.log(err));
   };
 
-
   useEffect(() => {
     if(isRunned.current) return;
       isRunned.current = true;

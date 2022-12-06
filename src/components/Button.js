@@ -3,7 +3,7 @@ import Loader from './Loader';
 
 export default function Button(
   {
-    style='primary',
+    stylecolor='primary',
     size='sm',
     confirm='filled',
     iconP='',
@@ -15,12 +15,12 @@ export default function Button(
   return (
     <button 
       className={`
-        btn ${style} ${size} ${confirm} icon-${iconP} ${className} ${load ? 'loading':''}
+        btn ${stylecolor} ${size} ${confirm} icon-${iconP} ${className} ${load ? 'loading':''}
       `}
       onClick={()=>setLoad(!load)}
     >
       {
-        load ? <Loader style={style} size={size}/>:''
+        load ? <Loader style={stylecolor} size={size}/>:''
       }
       {
         children

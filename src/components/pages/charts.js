@@ -1,15 +1,12 @@
 import React from "react";
-import { BiUser,BiBell } from "react-icons/bi";
-import { ReactComponent as Logo } from '../../logo.svg';
 import Button from '../Button';
-import IconBtn from '../IconBtn';
 import Tabs from "../Tabs";
 import Tab from "../Tab";
 import Customeselect from "../customeselect";
 import InfoRow from "../infoRow";
 import TopHeader from "../sections/TopHeader";
 
-export function Charts(){
+const Charts = ()=>{
     return (
       <main className='container'>
         <TopHeader/>
@@ -63,10 +60,11 @@ export function Charts(){
           
 
           <div className="d-flex justify-center  pt-16">
-            <Button confirm="corner" style="success" className='mr-4'>Buy</Button>
-            <Button confirm="corner" style="danger" className='ml-4'>Sell</Button>
+            <Button confirm="corner" stylecolor="success" className='mr-4'>Buy</Button>
+            <Button confirm="corner" stylecolor="danger" className='ml-4'>Sell</Button>
           </div>
         </div>
       </main>
     );
 }
+export default Charts;

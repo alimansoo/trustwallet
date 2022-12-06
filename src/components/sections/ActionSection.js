@@ -13,33 +13,51 @@ import {
   } from "react-icons/ri";
 import { Action } from '../Action';
 
-export default function ActionSection(porps){
-    return (
-        <div className="row action-row">
-          <Action loading title='Bitcoins'>
+export default function ActionSection({loadmode}){
+  console.log(loadmode);
+  return (
+    <div className="row action-row">
+      {
+        loadmode?
+        <>
+          <Action title='Bitcoins'>
             <BiBitcoin/>
           </Action>
-          <Action loading title='Deposit withdraw'>
+          <Action title='Deposit withdraw'>
             <BiMoney/>
           </Action>
-          <Action loading title='Tethers'>
+          <Action title='Tethers'>
             <RiTumblrLine/>
           </Action>
-          <Action loading title='Credits'>
+          <Action title='Credits'>
             <BiCreditCard/>
           </Action>
-          <Action loading title='Coins'>
+          <Action title='Coins'>
             <BiDollarCircle/>
           </Action>
-          <Action loading title='Market Calculator'>
+          <Action title='Market Calculator'>
             <BiCalculator/>
           </Action>
-          <Action loading title='Invite'>
+          <Action title='Invite'>
             <BiUserPlus/>
           </Action>
-          <Action loading title='Support'>
+          <Action title='Support'>
             <BiSupport/>
           </Action>
-        </div>
-    );
+        </>
+        :
+        <>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+          <Action loading></Action>
+        </>
+      }
+      
+    </div>
+  );
 }
